@@ -1,2 +1,6 @@
 node_modules
 dist
+lib
+bundles/vida.dev.min.js
+coverage
+playground
