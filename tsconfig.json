@@ -6,13 +6,18 @@
     "lib": ["DOM", "ES2019"],
     "moduleResolution": "Node",
     "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "Vida.h",
     "declarationMap": true,
     "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedParameters": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": []
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
