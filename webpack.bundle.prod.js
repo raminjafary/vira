@@ -1,26 +1,31 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: "inline-source-map",
-  devServer: {},
-  entry: "./src/dev/index.tsx",
+  entry: "./src/bundles/main.ts",
   output: {
-    filename: "dev.js",
-    path: path.resolve(__dirname, "playground"),
+    filename: "vida.[name].min.js",
+    path: path.resolve(__dirname, "bundles"),
+    library: "vida",
+    libraryExport: "default",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [
+    // new CompressionPlugin({
+    //     algorithm: "gzip",
+    //   }),
     new HtmlWebpackPlugin({
-      // inject: false,
+      // inject: false ,
       scriptLoading: "blocking",
       title: "Development",
-      filename: "dev.html",
+      filename: "../playground/bundle.[name].html",
       minify: false,
-      template: path.resolve(__dirname, "src/dev/index.ejs"),
+      template: path.resolve(__dirname, "src/dev/bundle.prod.ejs"),
       meta: {
         charset: { charset: "utf-8" },
         viewport: "width=device-width, initial-scale=1",
@@ -39,12 +44,6 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [
-      { test: /\.tsx?$/, loader: "ts-loader" },
-      {
-        test: /\.html$/,
-        loader: "html-loader",
-      },
-    ],
+    rules: [{ test: /\.tsx?$/, loader: "ts-loader" }],
   },
 };
