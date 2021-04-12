@@ -1,0 +1,31 @@
+{
+  "name": "template",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "raminjafary",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn dev",
+    "serve": "node dist/server.bundle.js",
+    "build": "yarn clean && yarn webpack:prod && yarn webpack:server",
+    "dev": "webpack --config config/webpack.client.dev.js && webpack --config config/webpack.server.js && npm-run-all --parallel dev:*",
+    "dev:nodemon": "nodemon --watch src --ext css,scss,sass,js,ts,tsx,webmanifest --watch dist dist/server.bundle.js",
+    "dev:webpack-client": "webpack --config config/webpack.client.dev.js --watch",
+    "dev:webpack-server": "webpack --config config/webpack.server.js --watch",
+    "webpack:server": "webpack --config config/webpack.server.js",
+    "webpack:prod": "webpack --config config/webpack.client.prod.js",
+    "postinstall": "yarn build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "webpack-manifest-plugin": "^3.1.1",
+    "webpack-merge": "^5.7.3",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1"
+  }
+}

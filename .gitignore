@@ -6,4 +6,3 @@ coverage/
 playground/
 bundles/
 *.lock
-packages/template

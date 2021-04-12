@@ -9,8 +9,6 @@
     "jsx": "react",
     "jsxFactory": "Vida.h",
     "declarationMap": true,
-    "outDir": "./lib",
-    "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
@@ -18,7 +16,7 @@
     "noUnusedParameters": true,
     "strictPropertyInitialization": false,
     "typeRoots": [],
-    "types": ["@types/node"]
+    "types": ["@types/node", "@types/jest"]
   },
   "include": ["src", "typings"],
   "exclude": ["node_modules", "dist"]
