@@ -1,5 +1,5 @@
 import * as Vida from "../core";
-import { renderToString } from "../ssr/renderToString";
+import { renderToString } from "../ssr";
 
 import fs from "fs";
 import { join } from "path";
