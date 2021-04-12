@@ -26,5 +26,7 @@ export function h(comp: any, props: any, ...children: any[]): any {
     }
   }
   appendChildren(element, children);
+  // @ts-ignore
+  if (element.ssr) return element.ssr;
   return element;
 }

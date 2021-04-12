@@ -15,18 +15,12 @@ export function render(
     }
   }
 
-  if (parent) {
+  if (!!parent) {
     if (removeChildNodes) {
       removeAllChildNodes(parent);
     }
 
-    if (
-      el &&
-      parent.id &&
-      el.id &&
-      parent.id === el.id &&
-      parent.parentElement
-    ) {
+    if (el && parent.id && parent.id === el.id && parent.parentElement) {
       parent.parentElement.replaceChild(el, parent);
     } else {
       if (Array.isArray(el)) {
@@ -34,11 +28,11 @@ export function render(
       } else {
         appendChildren(parent, renderElement(el));
       }
-
+      if (parent.ssr) return parent.ssr;
       return parent;
     }
   } else {
-    if (!Array.isArray(el)) return [el];
+    if (typeof isSSR === "boolean" && isSSR && !Array.isArray(el)) return [el];
     return el;
   }
 }
