@@ -1,7 +1,9 @@
-node_modules
-dist
-lib
+node_modules/
+dist/
+lib/
 bundles/vida.dev.min.js
-coverage
-playground
-bundles
+coverage/
+playground/
+bundles/
+*.lock
+packages/template
