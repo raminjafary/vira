@@ -1,14 +1,5 @@
 import * as Vida from "../core";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      h1: any;
-      div: any;
-    }
-  }
-}
-
 const SayHello = ({ name }: { name: string }) => (
   <h1 style={{ color: "blue" }}>Hello {name}!</h1>
 );

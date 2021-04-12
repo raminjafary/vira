@@ -15,7 +15,7 @@ export function render(
     }
   }
 
-  if (!!parent) {
+  if (parent) {
     if (removeChildNodes) {
       removeAllChildNodes(parent);
     }
