@@ -1,13 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "ESNext",
-    "rootDir": "./src",
-    "declarationMap": false,
     "declaration": false,
+    "declarationMap": false,
     "sourceMap": false,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": false
+    "outDir": "dist",
+    "rootDir": "src"
   }
 }

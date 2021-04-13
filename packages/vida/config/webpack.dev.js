@@ -5,10 +5,10 @@ module.exports = {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {},
-  entry: "./src/dev/index.tsx",
+  entry: path.resolve(__dirname, "../src/dev/index.tsx"),
   output: {
     filename: "dev.js",
-    path: path.resolve(__dirname, "playground"),
+    path: path.resolve(__dirname, "../playground"),
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -20,7 +20,7 @@ module.exports = {
       title: "Development",
       filename: "dev.html",
       minify: false,
-      template: path.resolve(__dirname, "src/dev/index.ejs"),
+      template: path.resolve(__dirname, "../src/dev/index.ejs"),
       meta: {
         charset: { charset: "utf-8" },
         viewport: "width=device-width, initial-scale=1",
