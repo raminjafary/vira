@@ -1,5 +1,4 @@
 import Vida from "../../../vida/lib/bundles/main";
-import Counter from "../components/counter";
 import HelloWorld from "../components/HelloWorld";
 
 export default () => (

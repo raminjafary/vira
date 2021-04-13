@@ -1,20 +1,23 @@
 {
   "private": true,
-  "version": "1.0.0",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
   "author": "raminjafary",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .js,.ts,tsx --ignore-path .gitignore .",
+    "vida:start": "yarn workspace vida start",
+    "vida:ssr": "yarn workspace vida ssr",
+    "vida:build": "yarn workspace vida build",
+    "vida:bundle": "yarn workspace vida bundle",
+    "vida:release": "yarn workspace vida release",
+    "template:start": "yarn workspace template start",
+    "template:build": "yarn workspace template build",
+    "test": "jest",
+    "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore .",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky install",
     "format": "prettier --write --ignore-path .gitignore --ignore-unknown .",
     "format:check": "prettier --check --ignore-path .gitignore --ignore-unknown .",
     "add:githook:pre-commit": "husky add .husky/pre-commit 'yarn lint-staged'",
-    "add:githook:commit-msg": "yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'",
-    "clean": "rimraf lib",
-    "release": "standard-version $1 && git push origin main --follow-tags"
+    "add:githook:commit-msg": "yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'"
   },
   "workspaces": [
     "packages/*"

@@ -1,13 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: "inline-source-map",
-  entry: "./src/bundles/dev.ts",
+  entry: path.resolve(__dirname, "../src/bundles/main.ts"),
   output: {
-    filename: "vida.dev.min.js",
-    path: path.resolve(__dirname, "bundles"),
+    filename: "vida.[name].min.js",
+    path: path.resolve(__dirname, "../bundles"),
     library: "vida",
     libraryExport: "default",
   },
@@ -15,13 +16,16 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [
+    // new CompressionPlugin({
+    //     algorithm: "gzip",
+    //   }),
     new HtmlWebpackPlugin({
-      // inject: false,
+      // inject: false ,
       scriptLoading: "blocking",
       title: "Development",
-      filename: "../playground/bundle.dev.html",
+      filename: "../playground/bundle.[name].html",
       minify: false,
-      template: path.resolve(__dirname, "src/dev/bundle.dev.ejs"),
+      template: path.resolve(__dirname, "../src/dev/bundle.prod.ejs"),
       meta: {
         charset: { charset: "utf-8" },
         viewport: "width=device-width, initial-scale=1",

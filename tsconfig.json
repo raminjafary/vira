@@ -3,7 +3,10 @@
     "target": "ES2015",
     "module": "commonjs",
     "declaration": true,
-    "lib": ["DOM", "ES2019"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "lib": ["dom", "esnext"],
     "moduleResolution": "Node",
     "sourceMap": true,
     "jsx": "react",
@@ -15,8 +18,11 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedParameters": true,
     "strictPropertyInitialization": false,
-    "typeRoots": [],
-    "types": ["@types/node", "@types/jest"]
+    "typeRoots": ["src/typings", "node_modules/@types"],
+    "types": ["node", "jest"],
+    "paths": {
+      "~/*": ["packages/*"]
+    }
   },
   "include": ["src", "typings"],
   "exclude": ["node_modules", "dist"]

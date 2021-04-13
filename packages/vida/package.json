@@ -8,17 +8,17 @@
   "scripts": {
     "start": "yarn dev",
     "build": "tsc",
-    "bundle": "webpack --config webpack.bundle.prod.js",
-    "test": "jest",
+    "bundle": "webpack --config config/webpack.bundle.prod.js",
     "dev": "yarn build && yarn bundle && yarn copy && npm-run-all --parallel dev:*",
     "dev:tsc": "tsc --watch",
     "dev:serve": "npx live-server --open=playground",
-    "dev:webpack": "webpack --config webpack.dev.js --watch",
-    "dev:bundle": "webpack --config webpack.bundle.dev.js --watch",
+    "dev:webpack": "webpack --config config/webpack.dev.js --watch",
+    "dev:bundle": "webpack --config config/webpack.bundle.dev.js --watch",
     "ssr": "tsc && npm-run-all --parallel ssr:*",
     "ssr:tsc": "tsc --watch",
     "ssr:nodemon": "nodemon lib/dev/indexSSR.js",
-    "serve": "webpack serve --config webpack.dev.js --open",
-    "copy": "mkdir -p playground && cp ./src/dev/index.html ./playground"
+    "serve": "webpack serve --config config/webpack.dev.js --open",
+    "copy": "mkdir -p playground && cp ./src/dev/index.html ./playground",
+    "release": "standard-version $1 && git push origin main --follow-tags"
   }
 }
