@@ -18,12 +18,11 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedParameters": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["src/typings", "node_modules/@types"],
     "types": ["node", "jest"],
     "paths": {
       "~/*": ["packages/*"]
     }
   },
-  "include": ["src", "typings"],
+  "include": ["packages/*/src", "typings"],
   "exclude": ["node_modules", "dist"]
 }
