@@ -32,6 +32,7 @@ export function render(
       return parent;
     }
   } else {
+    //@ts-ignore
     if (typeof isSSR === "boolean" && isSSR && !Array.isArray(el)) return [el];
     return el;
   }

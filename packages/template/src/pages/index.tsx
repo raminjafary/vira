@@ -1,4 +1,4 @@
-import Vida from "../../../vida/lib/bundles/main";
+import * as Vida from "~/vida/lib";
 import HelloWorld from "../components/HelloWorld";
 
 export default () => (

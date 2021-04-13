@@ -7,6 +7,7 @@ globalThis.isSSR = detectSSR() === true ? true : undefined;
 globalThis._nano = { isSSR, location: { pathname: "/" } };
 
 export function initSSR(pathname: string = "/") {
+  // @ts-ignore
   _nano.location = { pathname };
   // @ts-ignore
   globalThis.document = isSSR ? new DocumentSSR() : window.document;

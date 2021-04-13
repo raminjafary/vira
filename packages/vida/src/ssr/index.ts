@@ -1,1 +1,1 @@
-export { renderToString, HTMLElementSSR, DocumentSSR } from "./renderToString";
+export { renderToString } from "./renderToString";
