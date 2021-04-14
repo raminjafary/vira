@@ -6,6 +6,8 @@ export function h(comp: any, props: any, ...children: any[]): any {
     return { component: comp, props: { ...props, children: children } };
   }
 
+  let ref;
+
   const element = document.createElement(comp) as HTMLElement;
 
   for (const p in props) {
@@ -17,6 +19,10 @@ export function h(comp: any, props: any, ...children: any[]): any {
       props[p] = styles + ";";
     }
 
+    if (p == "ref") {
+      ref = props[p];
+    }
+
     if (isEvent(element, p.toLowerCase())) {
       element.addEventListener(p.toLowerCase().substring(2), (e: Event) =>
         props[p](e),
@@ -26,6 +32,10 @@ export function h(comp: any, props: any, ...children: any[]): any {
     }
   }
   appendChildren(element, children);
+
+  if (ref) {
+    ref(element);
+  }
   // @ts-ignore
   if (element.ssr) return element.ssr;
   return element;
