@@ -3,12 +3,12 @@
     "target": "ES2015",
     "module": "commonjs",
     "declaration": true,
-    "baseUrl": ".",
-    "rootDir": ".",
-    "outDir": "dist",
     "lib": ["dom", "esnext"],
     "moduleResolution": "Node",
     "sourceMap": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
     "jsx": "react",
     "jsxFactory": "Vida.h",
     "declarationMap": true,
@@ -20,7 +20,7 @@
     "strictPropertyInitialization": false,
     "types": ["node", "jest"],
     "paths": {
-      "~/*": ["packages/*"]
+      "vida": ["packages/vida/src"]
     }
   },
   "include": ["packages/*/src", "typings"],
