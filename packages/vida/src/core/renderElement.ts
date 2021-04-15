@@ -4,7 +4,6 @@ export function renderElement(cmp: any): any {
   if (["undefined" || "object"].includes(typeof cmp)) {
     return [];
   }
-
   if (cmp == null) {
     return [];
   }
@@ -22,9 +21,11 @@ export function renderElement(cmp: any): any {
   }
 
   if (
-    cmp?.component &&
+    cmp &&
+    cmp.component &&
     cmp.component.prototype &&
-    cmp.component.prototype.constructor
+    cmp.component.prototype.constructor &&
+    /^class\s/.test(Function.prototype.toString.call(cmp.component))
   ) {
     return renderClassComponent(cmp);
   }
