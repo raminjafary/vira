@@ -1,12 +1,24 @@
+import { Component, Fragment } from "../core";
 import * as Vida from "../core";
 
-const SayHello = ({ name }: { name: string }) => (
-  <h1 style={{ color: "blue" }}>Hello {name}!</h1>
-);
-const App = () => (
-  <div class="container">
-    <SayHello name="Vida" />
-  </div>
-);
+const ShowCount = ({ count }: { count: number }) => <div>Counter: {count}</div>;
+class Counter extends Component {
+  value = 0;
 
-Vida.render(<App />, document.getElementById("root"));
+  changeValue(newValue: number) {
+    this.value += newValue;
+    this.update();
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <ShowCount count={this.value} />
+        <button onClick={() => this.changeValue(1)}>Increment</button>
+        <button onClick={() => this.changeValue(-1)}>Decrement</button>
+      </Fragment>
+    );
+  }
+}
+
+Vida.render(<Counter />, document.getElementById("root"));

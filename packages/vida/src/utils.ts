@@ -25,5 +25,34 @@ export function strToHash(str: string) {
     hash = (hash << 5) - hash + char;
     hash |= 0;
   }
-  return hash;
+  return Math.abs(hash).toString(32);
+}
+
+export function isDescendant(descendant: any, root: any): boolean {
+  return (
+    descendant &&
+    (descendant === root || isDescendant(descendant.parentNode, root))
+  );
+}
+
+export function onNodeRemove(el: HTMLElement, callback: () => any) {
+  let observer = new MutationObserver((mutList) => {
+    for (const mut of mutList) {
+      mut.removedNodes.forEach((removedNode) => {
+        if (isDescendant(el, removedNode)) {
+          callback();
+          if (observer) {
+            observer.disconnect();
+            // @ts-ignore
+            observer = undefined;
+          }
+        }
+      });
+    }
+  });
+  observer.observe(document, {
+    childList: true,
+    subtree: true,
+  });
+  return observer;
 }
