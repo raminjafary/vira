@@ -5,3 +5,4 @@ export { renderElement } from "./renderElement";
 export { hydrate } from "./hydrate";
 export { Component } from "./component";
 export { Fragment } from "./fragment";
+export { lazyHydration } from "./lazyHydration";
