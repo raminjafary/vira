@@ -1,12 +1,11 @@
-import { nextTick, strToHash } from "src/utils";
-import { render } from "./render";
+import { nextTick, strToHash } from "../utils";
 
 export function renderElement(cmp: any): any {
   if (["undefined" || "object"].includes(typeof cmp)) {
     return [];
   }
 
-  if (cmp == "null") {
+  if (cmp == null) {
     return [];
   }
 
@@ -23,22 +22,22 @@ export function renderElement(cmp: any): any {
   }
 
   if (
-    cmp.component &&
+    cmp?.component &&
     cmp.component.prototype &&
     cmp.component.prototype.constructor
   ) {
     return renderClassComponent(cmp);
   }
 
-  if (typeof cmp === "function") return renderElement(cmp());
-
   if (cmp.component && typeof cmp.component === "function") {
     return renderFunctionalComponent(cmp);
   }
 
   if (Array.isArray(cmp)) {
-    return cmp.map((c) => render(c)).flat();
+    return cmp.map((c) => renderElement(c)).flat();
   }
+
+  if (typeof cmp === "function") return renderElement(cmp());
 
   if (cmp?.component?.tagName && typeof cmp.component.tagName === "string")
     return renderElement(cmp.component);
@@ -62,17 +61,19 @@ function renderClassComponent(cmp: any) {
   component.prototype._getHash = () => hash;
 
   const Component = new component(props);
-  Component.beforMount();
+
+  Component.beforeMount();
 
   let el = Component.render();
   el = renderElement(el);
+
   Component.elements = el;
 
   if (props?.ref) props.ref(Component);
   //@ts-ignore
   if (typeof globalThis.isSSR === "undefined") {
     nextTick(() => {
-      Component.mount();
+      Component._mount();
     });
   }
   return el;

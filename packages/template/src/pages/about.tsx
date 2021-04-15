@@ -1,4 +1,4 @@
-import * as Vida from "~/vida/lib";
+import * as Vida from "vida";
 
 export default ({ path }: { path: string }) => (
   <div>

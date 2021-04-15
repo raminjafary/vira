@@ -19,7 +19,7 @@ export function h(comp: any, props: any, ...children: any[]): any {
       props[p] = styles + ";";
     }
 
-    if (p == "ref") {
+    if (p === "ref") {
       ref = props[p];
     }
 

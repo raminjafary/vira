@@ -2,7 +2,7 @@ import express from "express";
 import compression from "compression";
 import HomePage from "../pages/index";
 import AboutPage from "../pages/about";
-import * as Vida from "~/vida/lib";
+import * as Vida from "vida";
 import { renderHTML } from "./html";
 
 const port = process.env.PORT || 3000;
