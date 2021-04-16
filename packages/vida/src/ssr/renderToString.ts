@@ -1,13 +1,10 @@
 import { render } from "../core";
 import { detectSSR } from "../utils";
 
-// @ts-ignore
 globalThis.isSSR = detectSSR() === true ? true : undefined;
-// @ts-ignore
 globalThis._nano = { isSSR, location: { pathname: "/" } };
 
 export function initSSR(pathname: string = "/") {
-  // @ts-ignore
   _nano.location = { pathname };
   // @ts-ignore
   globalThis.document = isSSR ? new DocumentSSR() : window.document;

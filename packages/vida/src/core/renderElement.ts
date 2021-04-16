@@ -71,8 +71,7 @@ function renderClassComponent(cmp: any) {
   Component.elements = el;
 
   if (props?.ref) props.ref(Component);
-  //@ts-ignore
-  if (typeof globalThis.isSSR === "undefined") {
+  if (typeof isSSR === "undefined") {
     nextTick(() => {
       Component._mount();
     });

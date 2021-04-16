@@ -1,13 +1,13 @@
 import { nextTick, onNodeRemove } from "../utils";
 import { renderElement } from "./renderElement";
 
-export class Component {
-  public id: string;
+export class Component<P extends Object = any, _S = any> {
+  public id: string | number;
   private _skipUnmout: boolean;
   private _hasUnmounted: boolean;
   private _elements: HTMLElement[] = [];
 
-  constructor(public props: any) {
+  constructor(public props: P) {
     this.id = this._getHash();
   }
 
