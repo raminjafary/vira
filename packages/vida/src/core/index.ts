@@ -6,3 +6,4 @@ export { hydrate } from "./hydrate";
 export { Component } from "./component";
 export { Fragment } from "./fragment";
 export { lazyHydration } from "./lazyHydration";
+export { Suspense } from "../components/suspense";
