@@ -1,12 +1,14 @@
 import * as Vida from "vida";
-import HelloWorld from "../components/HelloWorld";
+import Links from "../components/links";
 
 export default () => (
-  <div>
-    <HelloWorld />
-    <a href="/about">About</a>
-
+  <Vida.Fragment>
+    <div id="home">
+      <h1>Home</h1>
+      <div id="links">
+        <Links />
+      </div>
+    </div>
     <script async src="/public/js/home.hydrate.js"></script>
-    <div id="counter"></div>
-  </div>
+  </Vida.Fragment>
 );
