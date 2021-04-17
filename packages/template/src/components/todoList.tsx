@@ -1,8 +1,6 @@
 import * as Vida from "vida";
 
 export default (props: any) => {
-  console.log(props);
-
   return (
     <ul>
       {props.names
