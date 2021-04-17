@@ -18,7 +18,8 @@ app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
 app.get("/", (_, res) => {
   const app = Vida.renderToString(<HomePage />);
-  res.send(renderHTML(app));
+  const { body, head, footer } = Vida.Helmet.SSR(app);
+  res.send(renderHTML(body, head, footer));
 });
 
 app.get("/todos", async (_, res) => {
@@ -31,15 +32,17 @@ app.get("/todos", async (_, res) => {
 
   const todos = await fetchTodos();
 
-  Todos.fetchTodos = () => todos;
+  Todos.fetchTodos = () => () => todos;
 
   const app = Vida.renderToString(<Todos />);
-  res.send(renderHTML(app));
+  const { body, head, footer } = Vida.Helmet.SSR(app);
+  res.send(renderHTML(body, head, footer));
 });
 
 app.get("/about", (req, res) => {
   const app = Vida.renderToString(<AboutPage path={req.path} />);
-  res.send(renderHTML(app));
+  const { body, head, footer } = Vida.Helmet.SSR(app);
+  res.send(renderHTML(body, head, footer));
 });
 
 app.get("/manifest.webmanifest", (_, res) => {

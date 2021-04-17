@@ -1,9 +1,11 @@
 import fs from "fs";
 
-export function renderHTML(body: string) {
-  const manifest = fs.readFileSync(__dirname + "/public/js/manifest.json", {
-    encoding: "utf8",
-  });
+export function renderHTML(body: string, head: string[], footer: string[]) {
+  const manifest = JSON.parse(
+    fs.readFileSync(__dirname + "/public/js/manifest.json", {
+      encoding: "utf8",
+    }),
+  );
 
   let html = `
   <!DOCTYPE html>
@@ -14,9 +16,13 @@ export function renderHTML(body: string) {
       <meta name="theme-color" content="#3367D6">
       <link rel="manifest" href="/manifest.webmanifest">
       <link rel="apple-touch-icon" href="/public/img/pwa/icons-192.png">
+      ${head.join("\n")}
     </head>
     <body>
+    <div id="root">
       ${body}
+    </div>
+      ${footer.join("\n")}
       <!-- <script>
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js');
@@ -26,7 +32,7 @@ export function renderHTML(body: string) {
   </html>`;
 
   const addChunkHash = () => {
-    for (const [key, value] of Object.entries(JSON.parse(manifest))) {
+    for (const [key, value] of Object.entries(manifest)) {
       if (html.includes(key)) html = html.replace(key, value as string);
     }
   };

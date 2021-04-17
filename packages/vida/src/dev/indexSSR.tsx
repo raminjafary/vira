@@ -1,18 +1,9 @@
 import * as Vida from "../core";
 import { renderToString } from "../ssr";
-
 import fs from "fs";
 import { join } from "path";
 import http from "http";
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      h1: any;
-      div: any;
-    }
-  }
-}
+import { Helmet } from "../components/helmet";
 
 const SayHello = ({ name }: { name: string }) => (
   <h1 onClick={() => console.log("hi")} style={{ color: "blue" }}>
@@ -20,12 +11,34 @@ const SayHello = ({ name }: { name: string }) => (
   </h1>
 );
 const App = () => (
-  <div class="container">
-    <SayHello name="Vida" />
-  </div>
+  <Vida.Fragment>
+    <Helmet>
+      <title>Vida App</title>
+      <style>
+        {
+          "\
+        body {\
+        font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,\
+        Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\
+        Helvetica, Arial, sans-serif;\
+      }\
+      "
+        }
+      </style>
+    </Helmet>
+    <div class="container">
+      <SayHello name="Vida" />
+    </div>
+  </Vida.Fragment>
 );
 
 const app = renderToString(<App />);
+
+const { body, head, footer } = Helmet.SSR(app);
+
+// console.log(body);
+console.log(head);
+// console.log(footer);
 
 let html = `
 <!DOCTYPE html>
@@ -33,19 +46,14 @@ let html = `
   <head>
   <meta content="utf-8" http-equiv="encoding" />
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body { 
-        font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, 
-        Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
-        Helvetica, Arial, sans-serif;
-      }
-     </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     ${head.join("\n")}
   </head>
   <body>
     <div id="root">
-      ${app}
+      ${body}
     </div>
+    ${footer.join("\n")}
   </body>
 </html>
 `;
