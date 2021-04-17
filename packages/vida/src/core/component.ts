@@ -1,7 +1,8 @@
 import { nextTick, onNodeRemove } from "../utils";
 import { renderElement } from "./renderElement";
+import { _state } from "./state";
 
-export class Component<P extends Object = any, _S = any> {
+export class Component<P extends Object = any, S = any> {
   public id: string | number;
   private _skipUnmout: boolean;
   private _hasUnmounted: boolean;
@@ -16,6 +17,26 @@ export class Component<P extends Object = any, _S = any> {
   public beforeMount() {}
   public destroy() {}
   private _getHash(): any {}
+
+  setState(state: S, shouldUpdate: boolean = false) {
+    if (state && typeof state === "object") {
+      this.state = { ...this.state, ...state };
+    } else this.state = state;
+
+    if (shouldUpdate) this.update();
+  }
+
+  get state() {
+    return _state.get(this.id);
+  }
+
+  set state(value: S) {
+    _state.set(this.id, value);
+  }
+
+  set initialState(state: S) {
+    if (!this.state) this.state = state;
+  }
 
   public get elements() {
     return this._elements;

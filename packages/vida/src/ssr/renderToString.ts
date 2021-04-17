@@ -1,4 +1,5 @@
 import { render } from "../core";
+import { _state } from "../core/state";
 import { detectSSR } from "../utils";
 
 globalThis.isSSR = detectSSR() === true ? true : undefined;
@@ -14,7 +15,10 @@ export function renderToString(
   component: any,
   options: { pathname?: string; clearState?: boolean } = {},
 ) {
-  initSSR(options?.pathname);
+  const { pathname, clearState = true } = options;
+
+  initSSR(pathname);
+  if (clearState) _state.clear();
 
   return render(component, null, true).join("") as string;
 }

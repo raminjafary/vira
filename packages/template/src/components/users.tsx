@@ -10,9 +10,11 @@ const fetchNames = async () => {
 const List = (props: any) => {
   return (
     <ul>
-      {props.names.map((n: any) => {
-        return <li>{n}</li>;
-      })}
+      {props.names
+        ? props.names.map((n: any) => {
+            return <li>{n}</li>;
+          })
+        : ""}
     </ul>
   );
 };
@@ -21,7 +23,7 @@ export default function Users() {
   return (
     <div style={{ marginTop: "50px;" }}>
       <h2>Users: </h2>
-      <Vida.Suspense names={fetchNames} fallback={<div>loading...</div>}>
+      <Vida.Suspense cache names={fetchNames} fallback={<div>loading...</div>}>
         <List />
       </Vida.Suspense>
     </div>
