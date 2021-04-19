@@ -1,5 +1,4 @@
 import express from "express";
-//@ts-ignore
 import fetch from "node-fetch";
 import compression from "compression";
 import HomePage from "../pages/index";
