@@ -12,7 +12,13 @@ const server = {
     path: path.resolve(__dirname, "../dist"),
   },
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        exclude: /\.client(\.module)?\.s?[ac]ss$/i,
+        use: ["css-loader?url=false", "postcss-loader", "sass-loader"],
+      },
+    ],
   },
   externals: [nodeExternals()],
 };

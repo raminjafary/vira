@@ -6,3 +6,18 @@ declare namespace JSX {
     [element: string]: any;
   }
 }
+
+declare module "*.css" {
+  const styles: any;
+  export default styles;
+}
+
+declare module "*.scss" {
+  const styles: any;
+  export default styles;
+}
+
+declare module "*.sass" {
+  const styles: any;
+  export default styles;
+}

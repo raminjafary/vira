@@ -1,4 +1,6 @@
 import * as Vida from "vida";
+import classNames from "./users.client.module.css";
+import "./users.client.scss";
 
 const fetchNames = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -22,7 +24,7 @@ const List = (props: any) => {
 export default function Users() {
   return (
     <div style={{ marginTop: "50px;" }}>
-      <h2>Users: </h2>
+      <h2 class={classNames["users"]}>Users: </h2>
       <Vida.Suspense cache names={fetchNames} fallback={<div>loading...</div>}>
         <List />
       </Vida.Suspense>

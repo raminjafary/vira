@@ -19,8 +19,28 @@ module.exports = {
     path: path.resolve(__dirname, "../dist/public/js"),
   },
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.client(\.module)?\.s?[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader?url=false",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        exclude: /\.client(\.module)?\.s?[ac]ss$/i,
+        use: ["null-loader"],
+      },
+    ],
   },
+  // resolve: {
+  //   alias: {
+  //     "*.s[ac]ss$": false
+  //   }
+  // },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: "public", to: "../" }],

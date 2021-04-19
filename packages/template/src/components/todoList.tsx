@@ -1,6 +1,7 @@
 import * as Vida from "vida";
+import styles from "./todos.scss";
 
-export default (props: any) => {
+const Todos = (props: any) => {
   return (
     <ul>
       {props.names
@@ -11,3 +12,5 @@ export default (props: any) => {
     </ul>
   );
 };
+
+export default Vida.withStyles(styles)(Todos);
