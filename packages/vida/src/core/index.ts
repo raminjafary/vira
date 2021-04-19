@@ -7,3 +7,4 @@ export { Component } from "./component";
 export { Fragment } from "./fragment";
 export { lazyHydration } from "./lazyHydration";
 export { Suspense } from "../components/suspense";
+export { withStyles } from "./withStyles";
