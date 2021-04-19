@@ -7,7 +7,7 @@
     "start": "yarn dev",
     "serve": "node dist/server.bundle.js",
     "build": "yarn clean && yarn webpack:prod && yarn webpack:server",
-    "dev": "yarn clean && webpack --config config/webpack.client.dev.js && webpack --config config/webpack.server.js && npm-run-all --parallel dev:*",
+    "dev": "webpack --config config/webpack.client.dev.js && webpack --config config/webpack.server.js && npm-run-all --parallel dev:*",
     "dev:nodemon": "nodemon --watch src --ext css,scss,sass,js,ts,tsx,webmanifest --watch dist dist/server.bundle.js",
     "dev:webpack-client": "webpack --config config/webpack.client.dev.js --watch",
     "dev:webpack-server": "webpack --config config/webpack.server.js --watch",

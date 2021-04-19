@@ -9,7 +9,7 @@ module.exports = {
       absolute: true,
     })
     .reduce((acc, path) => {
-      const entry = path.match(/[^/]+\.tsx?$/gm)[0].replace(".tsx", "");
+      const entry = path.match(/[^\/]+\.tsx?$/gm)[0].replace(".tsx", "");
       acc[entry] = path;
       return acc;
     }, {}),
@@ -36,11 +36,6 @@ module.exports = {
       },
     ],
   },
-  // resolve: {
-  //   alias: {
-  //     "*.s[ac]ss$": false
-  //   }
-  // },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: "public", to: "../" }],

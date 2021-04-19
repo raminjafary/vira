@@ -3,7 +3,7 @@
     "target": "ES2015",
     "module": "commonjs",
     "declaration": true,
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "esnext", "dom.iterable"],
     "moduleResolution": "Node",
     "sourceMap": true,
     "baseUrl": ".",
