@@ -2,8 +2,10 @@ const path = require("path");
 const glob = require("glob");
 const CopyPlugin = require("copy-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+const { REGEX, LOADER } = require("./const");
 
 module.exports = {
+  // create one bundle for each file in /src/client
   entry: glob
     .sync(path.resolve(__dirname, "../src/client/") + "/**.ts*", {
       absolute: true,
@@ -21,18 +23,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.client(\.module)?\.s?[ac]ss$/i,
-        use: [
-          "style-loader",
-          "css-loader?url=false",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        test: REGEX.CLIENT_STYLES,
+        use: LOADER.CLIENT_STYLES,
       },
       {
-        test: /\.s[ac]ss$/i,
-        exclude: /\.client(\.module)?\.s?[ac]ss$/i,
-        use: ["null-loader"],
+        test: REGEX.STYLES,
+        exclude: REGEX.CLIENT_STYLES,
+        use: LOADER.NULL,
       },
     ],
   },
