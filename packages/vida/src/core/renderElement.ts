@@ -16,6 +16,10 @@ export function renderElement(cmp: any): any {
     return "" + cmp;
   }
 
+  if (cmp?.tagName && cmp.tagName.toLowerCase() === "svg") {
+    return SVG({ children: [cmp] });
+  }
+
   if (cmp?.tagName) {
     return cmp;
   }
@@ -77,4 +81,26 @@ function renderClassComponent(cmp: any) {
     });
   }
   return el;
+}
+
+export function hNS(tag: string) {
+  return document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    tag,
+  ) as SVGElement;
+}
+
+function SVG(props: any) {
+  const child = props.children[0] as SVGElement;
+  const attrs = child.attributes;
+
+  const svg = hNS("svg") as SVGElement;
+
+  for (const attr of attrs) {
+    svg.setAttribute(attr.name, attr.value);
+  }
+
+  svg.innerHTML = child.innerHTML;
+
+  return svg;
 }

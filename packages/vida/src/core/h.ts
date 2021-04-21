@@ -1,5 +1,6 @@
 import { isEvent } from "../utils";
 import { appendChildren } from "./appendChildren";
+import { hNS } from "./renderElement";
 
 export function h(comp: any, props: any, ...children: any[]): any {
   if (typeof comp !== "string") {
@@ -8,7 +9,10 @@ export function h(comp: any, props: any, ...children: any[]): any {
 
   let ref;
 
-  const element = document.createElement(comp) as HTMLElement;
+  const element =
+    comp === "svg"
+      ? (hNS("svg") as SVGElement)
+      : (document.createElement(comp) as HTMLElement);
 
   for (const p in props) {
     if (p === "style" && typeof props[p] === "object") {
@@ -31,7 +35,7 @@ export function h(comp: any, props: any, ...children: any[]): any {
       element.setAttribute(p, props[p]);
     }
   }
-  appendChildren(element, children);
+  appendChildren(element as any, children);
 
   if (ref) {
     ref(element);
