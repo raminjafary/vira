@@ -1,10 +1,10 @@
-import * as Vida from "vida";
+import Vida, { VidaLink } from "vida";
 
 export default ({ path }: { path: string }) => {
   return (
     <div>
       <h1>{path}</h1>
-      <Vida.Router.Link to="/">Home</Vida.Router.Link>
+      <VidaLink to="/">Home</VidaLink>
       <br />
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium

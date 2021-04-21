@@ -1,12 +1,11 @@
 export { appendChildren } from "./appendChildren";
 export { h } from "./h";
 export { render } from "./render";
-export { renderElement } from "./renderElement";
+export { renderElement, hNS } from "./renderElement";
 export { hydrate } from "./hydrate";
 export { Component } from "./component";
 export { Fragment } from "./fragment";
+export { createContext } from "./context";
+export { _state, _clearState } from "./state";
 export { lazyHydration } from "./lazyHydration";
-export { Suspense } from "../components/suspense";
-export { Img } from "../components/img";
-export { Link } from "../components/link";
 export { withStyles } from "./withStyles";

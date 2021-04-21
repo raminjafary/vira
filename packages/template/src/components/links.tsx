@@ -1,4 +1,4 @@
-import * as Vida from "vida";
+import Vida, { VidaLink, Link } from "vida";
 
 export default () => {
   return (
@@ -6,11 +6,11 @@ export default () => {
       {/* <Vida.Link prefetch="hover" href="/about">
         About
       </Vida.Link> */}
-      <Vida.Router.Link to="/about">About</Vida.Router.Link>
+      <VidaLink to="/about">About</VidaLink>
       <hr />
-      <Vida.Link prefetch href="/todos">
+      <Link prefetch href="/todos">
         Todos
-      </Vida.Link>
+      </Link>
     </div>
   );
 };

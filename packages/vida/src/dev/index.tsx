@@ -1,9 +1,8 @@
-import { Component, Fragment, lazyHydration } from "../core";
-import * as Vida from "../core";
+import Vida, { Component } from "../";
 import SayHi from "./components/SayHi";
 
 function HydrateLazily({ name }: { name: string }) {
-  return lazyHydration(<SayHi name={name} />, null);
+  return Vida.lazyHydration(<SayHi name={name} />, null);
 }
 
 class Counter extends Component {
@@ -16,13 +15,13 @@ class Counter extends Component {
 
   render() {
     return (
-      <Fragment>
+      <Vida.Fragment>
         <div>Counter: {this.value}</div>
         <button onClick={() => this.changeValue(1)}>Increment</button>
         <button onClick={() => this.changeValue(-1)}>Decrement</button>
         <div style={{ height: "1000px" }}></div>
         <HydrateLazily name="Vida" />
-      </Fragment>
+      </Vida.Fragment>
     );
   }
 }

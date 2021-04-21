@@ -1,4 +1,4 @@
-export default function createContext(ctx: any) {
+export function createContext(ctx: any) {
   let _ctx = ctx;
   return {
     Provider(props: any) {

@@ -1,4 +1,4 @@
-import { Helmet } from "../components/helmet";
+import { Helmet } from "../components";
 import { Component, h, Fragment } from ".";
 
 export function withStyles(styles: any): any {

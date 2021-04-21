@@ -1,5 +1,4 @@
-import { appendChildren } from "./appendChildren";
-import { renderElement } from "./renderElement";
+import { appendChildren, renderElement } from ".";
 
 export function render(
   cmp: any,

@@ -1,9 +1,7 @@
-import * as Vida from "../core";
-import { renderToString } from "../ssr";
+import Vida, { Helmet } from "../";
 import fs from "fs";
 import { join } from "path";
 import http from "http";
-import { Helmet } from "../components/helmet";
 
 const SayHello = ({ name }: { name: string }) => (
   <h1 onClick={() => console.log("hi")} style={{ color: "blue" }}>
@@ -32,7 +30,7 @@ const App = () => (
   </Vida.Fragment>
 );
 
-const app = renderToString(<App />);
+const app = Vida.renderToString(<App />);
 
 const { body, head, footer } = Helmet.SSR(app);
 

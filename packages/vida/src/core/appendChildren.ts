@@ -1,4 +1,4 @@
-import { renderElement } from "./renderElement";
+import { renderElement } from ".";
 
 export function appendChildren(element: HTMLElement, children: any) {
   if (!Array.isArray(children)) {

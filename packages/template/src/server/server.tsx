@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import compression from "compression";
 import HomePage from "../pages/index";
 import Todos from "../pages/todos";
-import * as Vida from "vida";
+import Vida, { Helmet } from "vida";
 import { renderHTML } from "./html";
 
 const port = process.env.PORT || 3000;
@@ -16,7 +16,7 @@ app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
 app.get("/", (_, res) => {
   const app = Vida.renderToString(<HomePage />);
-  const { body, head, footer } = Vida.Helmet.SSR(app);
+  const { body, head, footer } = Helmet.SSR(app);
   res.send(renderHTML(body, head, footer));
 });
 
@@ -33,7 +33,7 @@ app.get("/todos", async (_, res) => {
   Todos.fetchTodos = () => () => todos;
 
   const app = Vida.renderToString(<Todos />);
-  const { body, head, footer } = Vida.Helmet.SSR(app);
+  const { body, head, footer } = Helmet.SSR(app);
   res.send(renderHTML(body, head, footer));
 });
 

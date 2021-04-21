@@ -1,6 +1,5 @@
 import { nextTick, onNodeRemove } from "../utils";
-import { renderElement } from "./renderElement";
-import { _state } from "./state";
+import { renderElement, _state } from ".";
 
 export class Component<P extends Object = any, S = any> {
   public id: string | number;

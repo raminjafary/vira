@@ -1,21 +1,18 @@
-import * as Vida from "vida";
+import Vida, { Helmet, Suspense, Component } from "vida";
 import TodoList from "../components/todoList";
-export default class Todos extends Vida.Component {
+export default class Todos extends Component {
   static fetchTodos(): any {}
 
   render() {
     return (
       <div>
-        <Vida.Helmet>
+        <Helmet>
           <title>todos</title>
-        </Vida.Helmet>
+        </Helmet>
         <h2>Todos</h2>
-        <Vida.Suspense
-          names={Todos.fetchTodos()}
-          fallback={<div>loading...</div>}
-        >
+        <Suspense names={Todos.fetchTodos()} fallback={<div>loading...</div>}>
           <TodoList />
-        </Vida.Suspense>
+        </Suspense>
       </div>
     );
   }

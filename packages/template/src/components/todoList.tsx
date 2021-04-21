@@ -1,4 +1,4 @@
-import * as Vida from "vida";
+import Vida, { withStyles } from "vida";
 import styles from "./todos.scss";
 
 const Todos = (props: any) => {
@@ -13,4 +13,4 @@ const Todos = (props: any) => {
   );
 };
 
-export default Vida.withStyles(styles)(Todos);
+export default withStyles(styles)(Todos);

@@ -1,14 +1,14 @@
-import * as Vida from "vida";
+import Vida, { Helmet, Img, Route, Switch } from "vida";
 import Links from "../components/links";
 import About from "../components/about";
 
 export default () => (
   <Vida.Fragment>
-    <Vida.Helmet>
+    <Helmet>
       <title>home</title>
-    </Vida.Helmet>
+    </Helmet>
 
-    <Vida.Helmet>
+    <Helmet>
       <style>{`
           .lazy {
             opacity: 0;
@@ -19,17 +19,17 @@ export default () => (
             to   { opacity: 1; }
           }
         `}</style>
-    </Vida.Helmet>
+    </Helmet>
 
     <div style={{ width: "350px", height: "350px" }}>
-      <Vida.Img
+      <Img
         width="350px"
         height="350px"
         src="https://via.placeholder.com/350x350"
         onLoad={(e: Event) => {
           (e.target as HTMLImageElement).classList.add("lazy");
         }}
-      ></Vida.Img>
+      ></Img>
     </div>
     <svg height="100" width="100">
       <circle
@@ -43,22 +43,22 @@ export default () => (
       Sorry, your browser does not support inline SVG.
     </svg>
 
-    <Vida.Helmet footer>
+    <Helmet footer>
       <script async src="/public/js/home.hydrate.js"></script>
-    </Vida.Helmet>
+    </Helmet>
 
-    <Vida.Router.Switch>
-      <Vida.Router.Route exact path="/">
+    <Switch>
+      <Route exact path="/">
         <div id="home">
           <h1>Home</h1>
           <div id="links">
             <Links />
           </div>
         </div>
-      </Vida.Router.Route>
-      <Vida.Router.Route exact path="/about">
+      </Route>
+      <Route exact path="/about">
         <About path="/About" />
-      </Vida.Router.Route>
-    </Vida.Router.Switch>
+      </Route>
+    </Switch>
   </Vida.Fragment>
 );

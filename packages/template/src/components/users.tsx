@@ -1,4 +1,4 @@
-import * as Vida from "vida";
+import Vida, { Suspense } from "vida";
 import classNames from "./users.client.module.css";
 import "./users.client.scss";
 
@@ -25,9 +25,9 @@ export default function Users() {
   return (
     <div style={{ marginTop: "50px;" }}>
       <h2 class={classNames["users"]}>Users: </h2>
-      <Vida.Suspense cache names={fetchNames} fallback={<div>loading...</div>}>
+      <Suspense cache names={fetchNames} fallback={<div>loading...</div>}>
         <List />
-      </Vida.Suspense>
+      </Suspense>
     </div>
   );
 }

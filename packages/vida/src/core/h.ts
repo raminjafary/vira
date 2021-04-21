@@ -1,6 +1,5 @@
 import { isEvent } from "../utils";
-import { appendChildren } from "./appendChildren";
-import { hNS } from "./renderElement";
+import { appendChildren, hNS } from ".";
 
 export function h(comp: any, props: any, ...children: any[]): any {
   if (typeof comp !== "string") {

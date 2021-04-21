@@ -1,6 +1,6 @@
 import { Component, h, render } from "../core";
 
-export class visible extends Component {
+export class Visible extends Component {
   private isVisible = false;
 
   mount() {

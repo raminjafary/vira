@@ -1,4 +1,4 @@
-import * as Vida from "vida";
+import Vida from "vida";
 import Links from "../components/links";
 import Index from "../pages/index";
 
