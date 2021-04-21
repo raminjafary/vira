@@ -56,3 +56,13 @@ export function onNodeRemove(el: HTMLElement, callback: () => any) {
   });
   return observer;
 }
+
+export function task(func: () => void) {
+  return setTimeout(func, 0);
+}
+
+export function nodeToString(node: any) {
+  const temp = document.createDocumentFragment();
+  temp.appendChild(node.cloneNode(true));
+  return temp.toString();
+}
