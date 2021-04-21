@@ -7,5 +7,6 @@ export { Component } from "./component";
 export { Fragment } from "./fragment";
 export { lazyHydration } from "./lazyHydration";
 export { Suspense } from "../components/suspense";
+export { Img } from "../components/img";
 export { Link } from "../components/link";
 export { withStyles } from "./withStyles";
