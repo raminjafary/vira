@@ -2,7 +2,6 @@ import express from "express";
 import fetch from "node-fetch";
 import compression from "compression";
 import HomePage from "../pages/index";
-import AboutPage from "../pages/about";
 import Todos from "../pages/todos";
 import * as Vida from "vida";
 import { renderHTML } from "./html";
@@ -34,12 +33,6 @@ app.get("/todos", async (_, res) => {
   Todos.fetchTodos = () => () => todos;
 
   const app = Vida.renderToString(<Todos />);
-  const { body, head, footer } = Vida.Helmet.SSR(app);
-  res.send(renderHTML(body, head, footer));
-});
-
-app.get("/about", (req, res) => {
-  const app = Vida.renderToString(<AboutPage path={req.path} />);
   const { body, head, footer } = Vida.Helmet.SSR(app);
   res.send(renderHTML(body, head, footer));
 });
