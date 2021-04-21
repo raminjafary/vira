@@ -8,6 +8,30 @@ export default () => (
       <title>home</title>
     </Vida.Helmet>
 
+    <Vida.Helmet>
+      <style>{`
+          .lazy {
+            opacity: 0;
+            animation: fadein 2s forwards;
+          }
+          @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+          }
+        `}</style>
+    </Vida.Helmet>
+
+    <div style={{ width: "350px", height: "350px" }}>
+      <Vida.Img
+        width="350px"
+        height="350px"
+        src="https://via.placeholder.com/350x350"
+        onLoad={(e: Event) => {
+          (e.target as HTMLImageElement).classList.add("lazy");
+        }}
+      ></Vida.Img>
+    </div>
+
     <Vida.Helmet footer>
       <script async src="/public/js/home.hydrate.js"></script>
     </Vida.Helmet>
