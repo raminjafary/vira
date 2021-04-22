@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   devtool: "inline-source-map",
-  entry: path.resolve(__dirname, "../src/bundles/dev.ts"),
+  entry: path.resolve(__dirname, "../src/bundles/full.ts"),
   output: {
     filename: "vida.dev.min.js",
     path: path.resolve(__dirname, "../bundles"),

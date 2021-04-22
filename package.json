@@ -11,7 +11,7 @@
     "template:start": "yarn workspace template start",
     "template:build": "yarn workspace template build",
     "test": "jest",
-    "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky install",
     "format": "prettier --write --ignore-path .gitignore --ignore-unknown .",
