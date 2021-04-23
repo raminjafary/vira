@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "jsx": "react",
+    "jsxFactory": "Vida.h",
+    "strict": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["/**/*", "../../../typings"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
