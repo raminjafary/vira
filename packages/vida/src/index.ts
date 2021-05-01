@@ -9,6 +9,7 @@ export {
   withStyles,
   createContext,
   lazyHydration,
+  Store,
 } from "./core";
 export {
   Suspense,

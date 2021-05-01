@@ -17,6 +17,7 @@ import {
   withStyles,
   createContext,
   lazyHydration,
+  Store,
 } from "../";
 
 export default {
@@ -38,4 +39,5 @@ export default {
   withStyles,
   createContext,
   lazyHydration,
+  Store,
 };

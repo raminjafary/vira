@@ -9,3 +9,4 @@ export { createContext } from "./context";
 export { _state, _clearState } from "./state";
 export { lazyHydration } from "./lazyHydration";
 export { withStyles } from "./withStyles";
+export { Store } from "./store";
