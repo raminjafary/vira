@@ -1,3 +1,5 @@
+import { h } from "../";
+
 export const nextTick =
   typeof Promise === "function"
     ? Promise.prototype.then.bind(Promise.resolve())
@@ -66,3 +68,11 @@ export function nodeToString(node: any) {
   temp.appendChild(node.cloneNode(true));
   return temp.toString();
 }
+
+export const addStylesToHead = (styles: string, hash: string) => {
+  const el = document.querySelector(`[data-css-hash*="${hash}"]`);
+  if (!el) {
+    const styleElement = h("style", { "data-css-hash": hash }, styles);
+    document.head.appendChild(styleElement);
+  }
+};
