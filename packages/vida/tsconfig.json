@@ -4,5 +4,6 @@
     "outDir": "lib",
     "rootDir": "src"
   },
-  "include": ["../../typings", "src"]
+  "include": ["../../typings", "src"],
+  "exclude": ["node_modules", "dist", "../lib"]
 }

@@ -1,4 +1,4 @@
-import { h } from "../";
+import { h } from "../src";
 
 export const nextTick =
   typeof Promise === "function"
