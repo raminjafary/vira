@@ -7,9 +7,9 @@ export default () => {
         About
       </Vida.Link> */}
       <VidaLink to="/about">About</VidaLink>
-      <hr />
+      <VidaLink to="/deadend">Deadend</VidaLink>
       <Link prefetch href="/todos">
-        Todos
+        Todos prefetched SSR
       </Link>
     </div>
   );

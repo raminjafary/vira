@@ -21,28 +21,6 @@ export default () => (
         `}</style>
     </Helmet>
 
-    <div style={{ width: "350px", height: "350px" }}>
-      <Img
-        width="350px"
-        height="350px"
-        src="https://via.placeholder.com/350x350"
-        onLoad={(e: Event) => {
-          (e.target as HTMLImageElement).classList.add("lazy");
-        }}
-      ></Img>
-    </div>
-    <svg height="100" width="100">
-      <circle
-        cx="50"
-        cy="50"
-        r="40"
-        stroke="black"
-        stroke-width="3"
-        fill="red"
-      />
-      Sorry, your browser does not support inline SVG.
-    </svg>
-
     <Helmet footer>
       <script async src="/public/js/home.hydrate.js"></script>
     </Helmet>
@@ -50,6 +28,27 @@ export default () => (
     <Switch>
       <Route exact path="/">
         <div id="home">
+          <div style={{ width: "350px", height: "350px" }}>
+            <Img
+              width="350px"
+              height="350px"
+              src="https://via.placeholder.com/350x350"
+              onLoad={(e: Event) => {
+                (e.target as HTMLImageElement).classList.add("lazy");
+              }}
+            ></Img>
+          </div>
+          <svg height="100" width="100">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="black"
+              stroke-width="3"
+              fill="red"
+            />
+            Sorry, your browser does not support inline SVG.
+          </svg>
           <h1>Home</h1>
           <div id="links">
             <Links />
