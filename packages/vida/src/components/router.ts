@@ -134,7 +134,11 @@ export class Switch extends Component<{ fallback?: any; children?: any }> {
   }
 
   shouldUpdate() {
-    return this.path !== this.match.path || this.index !== this.match.index;
+    return (
+      this.path !== this.match.path ||
+      this.index !== this.match.index ||
+      (this.path === this.match.path && this.index === this.match.index)
+    );
   }
 
   render() {
