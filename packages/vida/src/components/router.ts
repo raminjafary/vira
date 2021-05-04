@@ -125,6 +125,7 @@ export class Switch extends Component<{ fallback?: any; children?: any }> {
           regex,
         },
       );
+
       if (match) {
         this.match.index = i;
         this.match.path = path;
@@ -134,17 +135,18 @@ export class Switch extends Component<{ fallback?: any; children?: any }> {
   }
 
   shouldUpdate() {
-    return (
-      this.path !== this.match.path ||
-      this.index !== this.match.index ||
-      (this.path === this.match.path && this.index === this.match.index)
-    );
+    return this.path !== this.match.path || this.index !== this.match.index;
   }
 
   render() {
     this.findChild();
 
     const child = this.props.children[this.match.index];
+
+    if (this.match.index === -1) {
+      this.path = "";
+      this.index = 0;
+    }
 
     if (child) {
       const { path } = child.props;
