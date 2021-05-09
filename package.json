@@ -9,6 +9,7 @@
     "vida:bundle": "yarn workspace vida bundle",
     "vida:denoify": "yarn workspace vida denoify",
     "vida:deno": "yarn workspace vida deno",
+    "vida:deno:test": "yarn workspace vida deno:test",
     "vida:release": "yarn workspace vida release",
     "template:start": "yarn workspace template start",
     "template:build": "yarn workspace template build",

@@ -21,7 +21,7 @@
     "copy": "mkdir -p playground && cp ./src/dev/index.html ./playground",
     "release": "standard-version $1 && git push origin main --follow-tags",
     "deno": "deno run --no-check --allow-net -c tsconfig.deno.json deno_dev/index.tsx",
-    "deno:test": "deno test --no-check -c tsconfig.deno.json deno_dev/deno.test.tsx",
+    "deno:test": "deno test --no-check -c tsconfig.deno.json deno_dev/index.test.tsx",
     "denoify": "rimraf deno_lib && denoify && rimraf deno_lib/bundles deno_lib/dev"
   }
 }
