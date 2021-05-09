@@ -1,4 +1,4 @@
-import { h } from ".";
+import { h } from "./index.ts";
 
 export const nextTick =
   typeof Promise === "function"

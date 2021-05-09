@@ -7,6 +7,8 @@
     "vida:ssr": "yarn workspace vida ssr",
     "vida:build": "yarn workspace vida build",
     "vida:bundle": "yarn workspace vida bundle",
+    "vida:denoify": "yarn workspace vida denoify",
+    "vida:deno": "yarn workspace vida deno",
     "vida:release": "yarn workspace vida release",
     "template:start": "yarn workspace template start",
     "template:build": "yarn workspace template build",
@@ -50,5 +52,8 @@
     "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "denoify": "^0.7.1"
   }
 }
