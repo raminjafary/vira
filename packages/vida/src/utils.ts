@@ -6,7 +6,7 @@ export const nextTick =
     : setTimeout;
 
 export function isEvent(el: any, prop: string) {
-  if (!~prop.indexOf("on")) {
+  if (prop.indexOf("on") !== 0) {
     return false;
   }
   if (el.ssr) return true;
