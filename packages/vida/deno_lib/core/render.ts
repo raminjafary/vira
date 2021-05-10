@@ -27,9 +27,9 @@ export function render(
       } else {
         appendChildren(parent, renderElement(el));
       }
-      if (parent.ssr) return parent.ssr;
-      return parent;
     }
+    if (parent.ssr) return parent.ssr;
+    return parent;
   } else {
     if (typeof isSSR === "boolean" && isSSR && !Array.isArray(el)) return [el];
     return el;
