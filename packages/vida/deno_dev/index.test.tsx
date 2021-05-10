@@ -37,7 +37,6 @@ Deno.test("should render without errors", () => {
 
   const ssr = renderToString(<App />);
   const { body, head, footer } = Helmet.SSR(ssr);
-  console.log(ssr);
 
   assertEquals(
     body,
@@ -45,7 +44,7 @@ Deno.test("should render without errors", () => {
   );
   assertEquals(
     head.join("\n"),
-    '<title>vida</title><meta name="description" content="vida" />',
+    '<title>vida</title><meta content="vida" name="description" />',
   );
   assertEquals(footer.join("\n"), '<script src="/bundle.js"></script>');
 });
