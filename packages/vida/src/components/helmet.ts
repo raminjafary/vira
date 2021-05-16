@@ -8,7 +8,7 @@ export class Helmet extends Component {
     const footer: string[] = [];
 
     if (document?.head) {
-      let children = (document.head.children as unknown) as string[];
+      let children = document.head.children as unknown as string[];
 
       for (let i = 0; i < children.length; i++) {
         if (head.indexOf(children[i]) === -1) {

@@ -82,7 +82,7 @@ export class Component<P extends Object = any, S = any> {
 
     let el = this.render(update);
     el = renderElement(el);
-    this.elements = (el as unknown) as HTMLElement[];
+    this.elements = el as unknown as HTMLElement[];
 
     const parent = oldElements[0].parentElement as HTMLElement;
 
