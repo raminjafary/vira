@@ -1,7 +1,11 @@
 {
   "private": true,
   "author": "raminjafary",
+  "description": "small and fast ssr first framework",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "vida:start": "yarn workspace vida start",
     "vida:ssr": "yarn workspace vida ssr",
@@ -52,9 +56,7 @@
     "typescript": "^4.2.3",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.11.2",
     "denoify": "^0.7.1"
   }
 }
