@@ -14,8 +14,8 @@ export function isEvent(el: any, prop: string) {
 }
 
 export function detectSSR() {
-  //@ts-ignore
   return (
+    //@ts-ignore
     typeof Deno !== "undefined" || (typeof window === "undefined" && isSSR)
   );
 }
