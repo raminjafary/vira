@@ -38,7 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "compression-webpack-plugin": "^8.0.0",
-    "denoify": "^0.7.1",
+    "denoify": "^0.8.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
