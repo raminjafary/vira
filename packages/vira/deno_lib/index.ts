@@ -16,7 +16,7 @@ export {
   Link,
   Switch,
   Route,
-  VidaLink,
+  ViraLink,
   Img,
   Helmet,
   Visible,

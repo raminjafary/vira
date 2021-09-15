@@ -10,7 +10,7 @@
     "rootDir": ".",
     "outDir": "dist",
     "jsx": "react",
-    "jsxFactory": "Vida.h",
+    "jsxFactory": "Vira.h",
     "declarationMap": true,
     "strict": true,
     "noUnusedLocals": true,
@@ -20,7 +20,7 @@
     "strictPropertyInitialization": false,
     "types": ["node", "jest"],
     "paths": {
-      "vida": ["packages/vida/src"]
+      "vira": ["packages/vira/src"]
     }
   },
   "include": ["packages/*/src", "typings"],

@@ -20,8 +20,8 @@ Deno.test("should render without errors", () => {
   const App = () => (
     <div>
       <Helmet>
-        <title>vida</title>
-        <meta name="description" content="vida" />
+        <title>vira</title>
+        <meta name="description" content="vira" />
       </Helmet>
 
       <Helmet footer>
@@ -44,7 +44,7 @@ Deno.test("should render without errors", () => {
   );
   assertEquals(
     head.join("\n"),
-    '<title>vida</title><meta content="vida" name="description" />',
+    '<title>vira</title><meta content="vira" name="description" />',
   );
   assertEquals(footer.join("\n"), '<script src="/bundle.js"></script>');
 });

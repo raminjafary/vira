@@ -3,7 +3,7 @@ import {
   Link,
   Switch,
   Route,
-  VidaLink,
+  ViraLink,
   Img,
   Helmet,
   Visible,
@@ -18,14 +18,14 @@ import {
   createContext,
   lazyHydration,
   Store,
-} from "../";
+} from "..";
 
 export default {
   Suspense,
   Link,
   Switch,
   Route,
-  VidaLink,
+  ViraLink,
   Img,
   Helmet,
   Visible,

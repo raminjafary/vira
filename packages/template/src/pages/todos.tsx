@@ -1,4 +1,4 @@
-import Vida, { Helmet, Suspense, Component } from "vida";
+import Vira, { Helmet, Suspense, Component } from "vira";
 import TodoList from "../components/todoList";
 export default class Todos extends Component {
   static fetchTodos(): any {}

@@ -1,10 +1,10 @@
-import Vida, { VidaLink } from "vida";
+import Vira, { ViraLink } from "vira";
 
 export default ({ path }: { path: string }) => {
   return (
     <div>
       <h1>{path}</h1>
-      <VidaLink to="/">Home</VidaLink>
+      <ViraLink to="/">Home</ViraLink>
       <br />
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium

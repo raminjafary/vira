@@ -1,9 +1,9 @@
-import Vida, { Component } from "../";
+import Vira, { Component } from "..";
 import SayHi from "./components/SayHi";
 import { jsx } from "../jsx";
 
 function HydrateLazily({ name }: { name: string }) {
-  return Vida.lazyHydration(<SayHi name={name} />, null);
+  return Vira.lazyHydration(<SayHi name={name} />, null);
 }
 class Counter extends Component {
   value = 0;
@@ -15,15 +15,15 @@ class Counter extends Component {
 
   render() {
     return (
-      <Vida.Fragment>
+      <Vira.Fragment>
         {jsx`<div>Counter: ${this.value}</div>`}
         <button onClick={() => this.changeValue(1)}>Increment</button>
         <button onClick={() => this.changeValue(-1)}>Decrement</button>
         <div style={{ height: "1000px" }}></div>
-        <HydrateLazily name="Vida" />
-      </Vida.Fragment>
+        <HydrateLazily name="Vira" />
+      </Vira.Fragment>
     );
   }
 }
 
-Vida.render(<Counter />, document.getElementById("root"));
+Vira.render(<Counter />, document.getElementById("root"));

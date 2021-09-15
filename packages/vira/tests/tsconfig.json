@@ -3,7 +3,7 @@
     "target": "ES2015",
     "module": "commonjs",
     "jsx": "react",
-    "jsxFactory": "Vida.h",
+    "jsxFactory": "Vira.h",
     "strict": true,
     "alwaysStrict": false,
     "noImplicitUseStrict": true,

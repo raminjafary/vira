@@ -1,13 +1,13 @@
-import Vida, { VidaLink, Link } from "vida";
+import Vira, { ViraLink, Link } from "vira";
 
 export default () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {/* <Vida.Link prefetch="hover" href="/about">
+      {/* <Vira.Link prefetch="hover" href="/about">
         About
-      </Vida.Link> */}
-      <VidaLink to="/about">About</VidaLink>
-      <VidaLink to="/deadend">Deadend</VidaLink>
+      </Vira.Link> */}
+      <ViraLink to="/about">About</ViraLink>
+      <ViraLink to="/deadend">Deadend</ViraLink>
       <Link prefetch href="/todos">
         Todos prefetched SSR
       </Link>

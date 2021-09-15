@@ -1,4 +1,4 @@
-import Vida, { Helmet } from "../";
+import Vira, { Helmet } from "..";
 import fs from "fs";
 import { join } from "path";
 import http from "http";
@@ -9,9 +9,9 @@ const SayHello = ({ name }: { name: string }) => (
   </h1>
 );
 const App = () => (
-  <Vida.Fragment>
+  <Vira.Fragment>
     <Helmet>
-      <title>Vida App</title>
+      <title>Vira App</title>
       <style>
         {
           "\
@@ -25,12 +25,12 @@ const App = () => (
       </style>
     </Helmet>
     <div class="container">
-      <SayHello name="Vida" />
+      <SayHello name="Vira" />
     </div>
-  </Vida.Fragment>
+  </Vira.Fragment>
 );
 
-const app = Vida.renderToString(<App />);
+const app = Vira.renderToString(<App />);
 
 const { body, head, footer } = Helmet.SSR(app);
 

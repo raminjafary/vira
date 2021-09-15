@@ -1,9 +1,9 @@
-import Vida, { Helmet, Img, Route, Switch } from "vida";
+import Vira, { Helmet, Img, Route, Switch } from "vira";
 import Links from "../components/links";
 import About from "../components/about";
 
 export default () => (
-  <Vida.Fragment>
+  <Vira.Fragment>
     <Helmet>
       <title>home</title>
     </Helmet>
@@ -59,5 +59,5 @@ export default () => (
         <About path="/About" />
       </Route>
     </Switch>
-  </Vida.Fragment>
+  </Vira.Fragment>
 );

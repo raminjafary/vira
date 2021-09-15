@@ -1,7 +1,7 @@
 node_modules/
 dist/
 lib/
-bundles/vida.dev.min.js
+bundles/vira.dev.min.js
 coverage/
 playground/
 bundles/

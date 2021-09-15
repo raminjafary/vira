@@ -4,5 +4,5 @@
   "collectCoverageFrom": ["lib/**/*.js", "!lib/{bundles,dev}/**"],
   "maxConcurrency": 2,
   "maxWorkers": 2,
-  "projects": ["<rootDir>/vida"]
+  "projects": ["<rootDir>/vira"]
 }

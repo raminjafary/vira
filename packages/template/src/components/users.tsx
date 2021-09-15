@@ -1,4 +1,4 @@
-import Vida, { Suspense } from "vida";
+import Vira, { Suspense } from "vira";
 import classNames from "./users.client.module.css";
 import "./users.client.scss";
 

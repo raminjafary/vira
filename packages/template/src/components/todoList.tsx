@@ -1,4 +1,4 @@
-import Vida, { withStyles } from "vida";
+import Vira, { withStyles } from "vira";
 import styles from "./todos.scss";
 
 const Todos = (props: any) => {

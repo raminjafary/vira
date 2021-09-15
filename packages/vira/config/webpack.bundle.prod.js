@@ -9,9 +9,9 @@ module.exports = {
     full: path.resolve(__dirname, "../src/bundles/full.ts"),
   },
   output: {
-    filename: "vida.[name].min.js",
+    filename: "vira.[name].min.js",
     path: path.resolve(__dirname, "../bundles"),
-    library: "vida",
+    library: "vira",
     libraryExport: "default",
   },
   resolve: {

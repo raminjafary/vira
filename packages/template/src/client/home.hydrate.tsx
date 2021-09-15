@@ -1,11 +1,11 @@
-import Vida from "vida";
+import Vira from "vira";
 import Index from "../pages/index";
 
 async function hydrate() {
-  Vida.hydrate(<Index />, document.getElementById("root"));
+  Vira.hydrate(<Index />, document.getElementById("root"));
 
   const { default: Users } = await import("../components/users");
-  const html = Vida.hydrate(<Users />);
+  const html = Vira.hydrate(<Users />);
   document.getElementById("home")?.appendChild(html);
 }
 hydrate();
