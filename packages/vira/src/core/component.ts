@@ -101,6 +101,7 @@ export class Component<P extends Object = any, S = any> {
 
     this.addNodeRemoveListener();
 
+    //@ts-ignore
     nextTick(() => {
       this._skipUnmout = false;
       if (!this.elements[0].isConnected) {
