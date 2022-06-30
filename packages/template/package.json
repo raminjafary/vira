@@ -13,7 +13,6 @@
     "dev:webpack-server": "webpack --config config/webpack.server.js --watch",
     "webpack:server": "webpack --config config/webpack.server.js",
     "webpack:prod": "webpack --config config/webpack.client.prod.js",
-    "postinstall": "yarn build",
     "clean": "rimraf dist"
   },
   "devDependencies": {
